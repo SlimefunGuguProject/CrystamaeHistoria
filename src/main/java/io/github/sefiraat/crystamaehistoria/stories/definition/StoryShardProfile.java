@@ -4,6 +4,7 @@ import io.github.sefiraat.crystamaehistoria.slimefun.CrystaStacks;
 import io.github.sefiraat.crystamaehistoria.slimefun.Materials;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.inventory.ItemStack;
@@ -50,7 +51,7 @@ public class StoryShardProfile {
     public void tryDropSigil(@Nonnull Location location, @Nonnull StoryRarity storyRarity) {
         if (storyRarity != StoryRarity.UNIQUE && GeneralUtils.testChance(storyRarity.getId(), 100)) {
             ParticleUtils.displayParticleEffect(location, Particle.SPIT, 1, 3);
-            ParticleUtils.displayParticleEffect(location, Particle.ENCHANTMENT_TABLE, 1, 1);
+            ParticleUtils.displayParticleEffect(location, VersionedParticle.ENCHANT, 1, 1);
             location.getWorld().dropItemNaturally(location, CrystaStacks.ARCANE_SIGIL.clone());
         }
     }

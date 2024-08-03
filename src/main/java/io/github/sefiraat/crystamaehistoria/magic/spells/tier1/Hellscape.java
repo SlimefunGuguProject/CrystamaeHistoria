@@ -9,6 +9,7 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -63,13 +64,13 @@ public class Hellscape extends Spell {
 
     @ParametersAreNonnullByDefault
     public void afterProjectileHit(CastInformation castInformation) {
-        ParticleUtils.displayParticleEffect(castInformation.getMainTarget(), Particle.VILLAGER_ANGRY, 1.0, 5);
+        ParticleUtils.displayParticleEffect(castInformation.getMainTarget(), VersionedParticleX.ANGRY_VILLAGER, 1.0, 5);
     }
 
     @ParametersAreNonnullByDefault
     public void onTick(MagicProjectile magicProjectile) {
         ParticleUtils.displayParticleEffect(magicProjectile.getProjectile(), Particle.SWEEP_ATTACK, 0.5, 1);
-        ParticleUtils.displayParticleEffect(magicProjectile.getProjectile(), Particle.VILLAGER_ANGRY, 0.5, 1);
+        ParticleUtils.displayParticleEffect(magicProjectile.getProjectile(), VersionedParticleX.ANGRY_VILLAGER, 0.5, 1);
     }
 
     @Nonnull

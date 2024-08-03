@@ -9,9 +9,9 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Particle;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 
@@ -53,7 +53,7 @@ public class FrostNova extends Spell {
         for (LivingEntity livingEntity : getTargets(castInformation, getProjectileAoe(castInformation), true)) {
             GeneralUtils.damageEntity(livingEntity, castInformation.getCaster(), getDamage(castInformation));
             livingEntity.setFreezeTicks(60);
-            ParticleUtils.displayParticleEffect(livingEntity, Particle.SNOW_SHOVEL, 1, 5);
+            ParticleUtils.displayParticleEffect(livingEntity, VersionedParticleX.ITEM_SNOWBALL, 1, 5);
         }
     }
 

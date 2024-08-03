@@ -6,12 +6,12 @@ import io.github.sefiraat.crystamaehistoria.magic.spells.core.SpellCoreBuilder;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeSpell;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.potion.PotionEffectType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -22,8 +22,8 @@ public class ChillWind extends Spell {
         SpellCoreBuilder spellCoreBuilder = new SpellCoreBuilder(120, true, 7, false, 25, true)
             .makeTickingSpell(this::cast, 20, true, 5, false)
             .makeEffectingSpell(false, false)
-            .addNegativeEffect(PotionEffectType.SLOW, 4, 1)
-            .addNegativeEffect(PotionEffectType.SLOW_DIGGING, 4, 1);
+            .addNegativeEffect(VersionedPotionEffectType.SLOWNESS, 4, 1)
+            .addNegativeEffect(VersionedPotionEffectType.MINING_FATIGUE, 4, 1);
         setSpellCore(spellCoreBuilder.build());
     }
 

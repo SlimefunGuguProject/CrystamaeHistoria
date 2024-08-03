@@ -3,6 +3,7 @@ package io.github.sefiraat.crystamaehistoria.slimefun.items.exhalted;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -18,9 +19,9 @@ public class ExaltedBeacon extends ExaltedItem {
     static {
         EFFECT_TYPES.add(PotionEffectType.SPEED);
         EFFECT_TYPES.add(PotionEffectType.ABSORPTION);
-        EFFECT_TYPES.add(PotionEffectType.FAST_DIGGING);
+        EFFECT_TYPES.add(VersionedPotionEffectType.HASTE);
         EFFECT_TYPES.add(PotionEffectType.SATURATION);
-        EFFECT_TYPES.add(PotionEffectType.DAMAGE_RESISTANCE);
+        EFFECT_TYPES.add(VersionedPotionEffectType.RESISTANCE);
         EFFECT_TYPES.add(PotionEffectType.REGENERATION);
     }
 

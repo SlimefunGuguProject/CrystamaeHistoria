@@ -7,6 +7,7 @@ import io.github.sefiraat.crystamaehistoria.magic.spells.core.SpellCoreBuilder;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeSpell;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -39,7 +40,7 @@ public class Compass extends Spell {
             if (foundBlock == null) {
                 ParticleUtils.displayParticleEffect(
                     location.add(location.getDirection()),
-                    Particle.VILLAGER_ANGRY,
+                    VersionedParticleX.ANGRY_VILLAGER,
                     1,
                     10
                 );

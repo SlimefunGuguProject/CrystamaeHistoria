@@ -11,13 +11,13 @@ import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedEntityTypeX;
 import org.bukkit.DyeColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import org.bukkit.material.Colorable;
 
 import javax.annotation.Nonnull;
@@ -42,7 +42,7 @@ public class Bobulate extends Spell {
     public void fireProjectile(CastInformation castInformation) {
         final Location location = castInformation.getCastLocation();
         final Location aimLocation = location.clone().add(0, 1.5, 0).add(location.getDirection().multiply(2));
-        final MagicProjectile magicProjectile = SpellUtils.summonMagicProjectile(castInformation, EntityType.SPLASH_POTION, aimLocation);
+        final MagicProjectile magicProjectile = SpellUtils.summonMagicProjectile(castInformation, VersionedEntityTypeX.POTION, aimLocation);
         magicProjectile.setVelocity(location.getDirection(), 1.5);
         magicProjectile.disableGravity();
     }

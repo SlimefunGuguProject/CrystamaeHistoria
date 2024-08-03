@@ -22,6 +22,7 @@ import io.github.sefiraat.crystamaehistoria.utils.datatypes.PersistentPlateDataT
 import io.github.sefiraat.crystamaehistoria.utils.datatypes.PersistentSatchelInstanceType;
 import io.github.sefiraat.crystamaehistoria.utils.theme.ThemeType;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import lombok.Getter;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -40,7 +41,7 @@ import org.bukkit.util.Vector;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.awt.Color;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
@@ -407,7 +408,7 @@ public class LiquefactionBasinCache extends DisplayStandHolder {
     private void summonBoilingParticles() {
         final Location location = getLocation(true).add(0, 0.8, 0);
         location.getWorld().spawnParticle(
-            Particle.SMOKE_NORMAL,
+            VersionedParticle.SMOKE,
             location,
             0,
             0.2,
@@ -419,7 +420,7 @@ public class LiquefactionBasinCache extends DisplayStandHolder {
 
     private void summonCatalystParticles() {
         SphereEffect sphereEffect = new SphereEffect(CrystamaeHistoria.getEffectManager());
-        sphereEffect.particle = Particle.REDSTONE;
+        sphereEffect.particle = VersionedParticle.DUST;
         sphereEffect.color = org.bukkit.Color.TEAL;
         sphereEffect.setLocation(getLocation(true));
         sphereEffect.radius = 1;

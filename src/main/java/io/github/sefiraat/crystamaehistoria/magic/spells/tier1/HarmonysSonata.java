@@ -8,10 +8,11 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedMaterial;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Particle;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -67,7 +68,7 @@ public class HarmonysSonata extends Spell {
                 block.setType(material);
             }
             block.getRelative(BlockFace.DOWN).setType(Material.GRASS_BLOCK);
-            ParticleUtils.displayParticleEffect(block.getLocation(), Particle.FIREWORKS_SPARK, 0.5, 3);
+            ParticleUtils.displayParticleEffect(block.getLocation(), VersionedParticle.FIREWORK, 0.5, 3);
         }
     }
 
@@ -105,6 +106,6 @@ public class HarmonysSonata extends Spell {
     @Nonnull
     @Override
     public Material getMaterial() {
-        return Material.GRASS;
+        return VersionedMaterial.SHORT_GRASS;
     }
 }

@@ -9,6 +9,7 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
@@ -35,14 +36,14 @@ public class Animaniacs extends Spell {
         EntityType.DONKEY,
         EntityType.WOLF,
         EntityType.FOX,
-        EntityType.SNOWMAN,
+        VersionedEntityType.SNOW_GOLEM,
         EntityType.TURTLE,
         EntityType.RABBIT,
         EntityType.PARROT,
         EntityType.CAT,
         EntityType.OCELOT,
         EntityType.HORSE,
-        EntityType.MUSHROOM_COW,
+        VersionedEntityType.MOOSHROOM,
         EntityType.AXOLOTL,
         EntityType.PUFFERFISH,
         EntityType.PIG,

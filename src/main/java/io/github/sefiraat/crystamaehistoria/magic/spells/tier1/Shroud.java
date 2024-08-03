@@ -8,9 +8,9 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -41,7 +41,7 @@ public class Shroud extends Spell {
                 final Interaction interaction = livingEntity instanceof Player ? Interaction.ATTACK_PLAYER : Interaction.ATTACK_ENTITY;
                 if (GeneralUtils.hasPermission(castInformation.getCaster(), entity.getLocation(), interaction)) {
                     applyNegativeEffects(livingEntity, castInformation);
-                    ParticleUtils.displayParticleEffect(livingEntity, Particle.SLIME, 2, 2);
+                    ParticleUtils.displayParticleEffect(livingEntity, VersionedParticleX.ITEM_SLIME, 2, 2);
                 }
             }
         }

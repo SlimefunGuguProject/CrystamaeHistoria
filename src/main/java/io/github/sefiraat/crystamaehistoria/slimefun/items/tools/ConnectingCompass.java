@@ -8,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Location;
@@ -62,7 +63,7 @@ public class ConnectingCompass extends SlimefunItem {
                 if (location.getWorld().equals(pointToLocation.getWorld())) {
                     Vector vector = getVector(location, compassMeta.getLodestone());
                     ParticleUtils.drawLine(
-                        Particle.REDSTONE,
+                        VersionedParticle.DUST,
                         location,
                         location.clone().add(vector.multiply(5)),
                         0.5,

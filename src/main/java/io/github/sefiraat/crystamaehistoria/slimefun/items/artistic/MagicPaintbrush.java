@@ -4,12 +4,13 @@ import io.github.sefiraat.crystamaehistoria.utils.CrystaTag;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEnchantment;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedItemFlag;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Axolotl;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -31,12 +32,12 @@ public interface MagicPaintbrush {
         PotionMeta potionMeta = (PotionMeta) itemStack.getItemMeta();
         potionMeta.setColor(dyeColor.getColor());
         if (enchanted) {
-            potionMeta.addEnchant(Enchantment.LUCK, 1, true);
+            potionMeta.addEnchant(VersionedEnchantment.LUCK_OF_THE_SEA, 1, true);
         }
         potionMeta.addItemFlags(
             ItemFlag.HIDE_ENCHANTS,
             ItemFlag.HIDE_ATTRIBUTES,
-            ItemFlag.HIDE_POTION_EFFECTS
+            VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP
         );
         itemStack.setItemMeta(potionMeta);
         return itemStack;

@@ -8,6 +8,7 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -46,7 +47,7 @@ public class Protectorate extends Spell {
         for (Entity entity : location.getWorld().getNearbyEntities(location, effectRange, effectRange, effectRange)) {
             if (entity instanceof LivingEntity) {
                 PersistentDataAPI.setLong(entity, Keys.PDC_IS_INVULNERABLE, System.currentTimeMillis() + 1050);
-                ParticleUtils.displayParticleEffect(entity, Particle.VILLAGER_HAPPY, 1, 3);
+                ParticleUtils.displayParticleEffect(entity, VersionedParticle.HAPPY_VILLAGER, 1, 3);
             }
         }
     }

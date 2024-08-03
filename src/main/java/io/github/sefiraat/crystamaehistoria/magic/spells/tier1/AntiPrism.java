@@ -12,10 +12,11 @@ import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedEntityTypeX;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;
@@ -33,12 +34,12 @@ public class AntiPrism extends Spell {
             .makeEffectingSpell(true, true)
             .addNegativeEffect(PotionEffectType.BAD_OMEN, 1, 30)
             .addNegativeEffect(PotionEffectType.BLINDNESS, 1, 30)
-            .addNegativeEffect(PotionEffectType.CONFUSION, 1, 30)
-            .addNegativeEffect(PotionEffectType.HARM, 1, 30)
+            .addNegativeEffect(VersionedPotionEffectType.NAUSEA, 1, 30)
+            .addNegativeEffect(VersionedPotionEffectType.INSTANT_DAMAGE, 1, 30)
             .addNegativeEffect(PotionEffectType.HUNGER, 1, 30)
             .addNegativeEffect(PotionEffectType.POISON, 1, 30)
-            .addNegativeEffect(PotionEffectType.SLOW, 1, 30)
-            .addNegativeEffect(PotionEffectType.SLOW_DIGGING, 1, 30)
+            .addNegativeEffect(VersionedPotionEffectType.SLOWNESS, 1, 30)
+            .addNegativeEffect(VersionedPotionEffectType.MINING_FATIGUE, 1, 30)
             .addNegativeEffect(PotionEffectType.UNLUCK, 1, 30)
             .addNegativeEffect(PotionEffectType.WEAKNESS, 1, 30)
             .addNegativeEffect(PotionEffectType.WITHER, 1, 30);
@@ -49,7 +50,7 @@ public class AntiPrism extends Spell {
     public void cast(CastInformation castInformation) {
         Location location = castInformation.getCastLocation();
         Location aimLocation = location.clone().add(0, 1.5, 0).add(location.getDirection().multiply(2));
-        MagicProjectile magicProjectile = SpellUtils.summonMagicProjectile(castInformation, EntityType.SPLASH_POTION, aimLocation);
+        MagicProjectile magicProjectile = SpellUtils.summonMagicProjectile(castInformation, VersionedEntityTypeX.POTION, aimLocation);
         magicProjectile.setVelocity(location.getDirection(), 0.5);
     }
 

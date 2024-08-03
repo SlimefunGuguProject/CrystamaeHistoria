@@ -1,5 +1,6 @@
 package io.github.sefiraat.crystamaehistoria.utils;
 
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import lombok.experimental.UtilityClass;
 import org.bukkit.Location;
 import org.bukkit.Particle;
@@ -52,7 +53,7 @@ public class ParticleUtils {
             double x = ThreadLocalRandom.current().nextDouble(-rangeRadius, rangeRadius + 0.1);
             double y = ThreadLocalRandom.current().nextDouble(-rangeRadius, rangeRadius + 0.1);
             double z = ThreadLocalRandom.current().nextDouble(-rangeRadius, rangeRadius + 0.1);
-            location.getWorld().spawnParticle(Particle.REDSTONE, location.clone().add(x, y, z), 1, dustOptions);
+            location.getWorld().spawnParticle(VersionedParticle.DUST, location.clone().add(x, y, z), 1, dustOptions);
         }
     }
 
@@ -100,7 +101,7 @@ public class ParticleUtils {
 
     @ParametersAreNonnullByDefault
     public static void drawLine(@Nullable Particle.DustOptions dustOptions, Location start, Location end, double space) {
-        drawLine(Particle.REDSTONE, start, end, space, dustOptions);
+        drawLine(VersionedParticle.DUST, start, end, space, dustOptions);
     }
 
     @ParametersAreNonnullByDefault
@@ -166,6 +167,6 @@ public class ParticleUtils {
 
     @ParametersAreNonnullByDefault
     public static void drawCube(@Nullable Particle.DustOptions dustOptions, Location corner1, Location corner2, double space) {
-        drawCube(Particle.REDSTONE, corner1, corner2, space, dustOptions);
+        drawCube(VersionedParticle.DUST, corner1, corner2, space, dustOptions);
     }
 }

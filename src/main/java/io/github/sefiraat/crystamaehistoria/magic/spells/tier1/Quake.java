@@ -6,13 +6,14 @@ import io.github.sefiraat.crystamaehistoria.magic.spells.core.SpellCoreBuilder;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeSpell;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.potion.PotionEffectType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -25,7 +26,7 @@ public class Quake extends Spell {
             .makeDamagingSpell(2, true, 0, false)
             .makeEffectingSpell(true, false)
             .makeTickingSpell(this::onTick, 5, false, 20, false)
-            .addNegativeEffect(PotionEffectType.SLOW, 1, 60);
+            .addNegativeEffect(VersionedPotionEffectType.SLOWNESS, 1, 60);
         setSpellCore(spellCoreBuilder.build());
     }
 
@@ -47,7 +48,7 @@ public class Quake extends Spell {
             );
 
             Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(90, 100, 105), 2);
-            castLocation.getWorld().spawnParticle(Particle.REDSTONE, spawnLocation, 1, directionalXOffset, 2, directionalZOffset, dustOptions);
+            castLocation.getWorld().spawnParticle(VersionedParticle.DUST, spawnLocation, 1, directionalXOffset, 2, directionalZOffset, dustOptions);
         }
         for (Entity entity : castLocation.getWorld().getNearbyEntities(castLocation, range, 2, range)) {
             if (entity instanceof LivingEntity && entity.getUniqueId() != castInformation.getCaster()) {

@@ -6,6 +6,7 @@ import io.github.sefiraat.crystamaehistoria.magic.spells.core.SpellCoreBuilder;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeSpell;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -23,9 +24,9 @@ public class TimeCompression extends Spell {
         SpellCoreBuilder spellCoreBuilder = new SpellCoreBuilder(40, true, 10, false, 25, true)
             .makeTickingSpell(this::cast, 10, true, 20, false)
             .makeEffectingSpell(true, false)
-            .addPositiveEffect(PotionEffectType.JUMP, 1, 2)
+            .addPositiveEffect(VersionedPotionEffectType.JUMP_BOOST, 1, 2)
             .addPositiveEffect(PotionEffectType.SPEED, 1, 2)
-            .addPositiveEffect(PotionEffectType.FAST_DIGGING, 1, 2)
+            .addPositiveEffect(VersionedPotionEffectType.HASTE, 1, 2)
             .addPositiveEffect(PotionEffectType.DOLPHINS_GRACE, 1, 2);
         setSpellCore(spellCoreBuilder.build());
     }

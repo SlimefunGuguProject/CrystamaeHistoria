@@ -3,9 +3,9 @@ package io.github.sefiraat.crystamaehistoria.utils.mobgoals;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Particle;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.entity.FallingBlock;
@@ -27,7 +27,7 @@ public class BatteringRamGoal extends AbstractGoal<Goat> {
         double velZ = Math.abs(self.getVelocity().getZ());
 
         if (self.isOnGround() || (velX < 0.1 && velZ < 0.1)) {
-            ParticleUtils.displayParticleEffect(self, Particle.VILLAGER_ANGRY, 1, 5);
+            ParticleUtils.displayParticleEffect(self, VersionedParticleX.ANGRY_VILLAGER, 1, 5);
             self.remove();
             return;
         }

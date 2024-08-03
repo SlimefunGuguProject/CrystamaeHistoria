@@ -6,6 +6,7 @@ import io.github.sefiraat.crystamaehistoria.magic.spells.core.SpellCoreBuilder;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeSpell;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -45,7 +46,7 @@ public class Hearthstone extends Spell {
         Location location = caster.getBedSpawnLocation();
         if (location == null) {
             Location casterLocation = caster.getLocation();
-            ParticleUtils.displayParticleEffect(casterLocation.add(casterLocation.getDirection()), Particle.VILLAGER_ANGRY, 1, 10);
+            ParticleUtils.displayParticleEffect(casterLocation.add(casterLocation.getDirection()), VersionedParticleX.ANGRY_VILLAGER, 1, 10);
         } else {
             caster.teleportAsync(location, PlayerTeleportEvent.TeleportCause.PLUGIN);
         }

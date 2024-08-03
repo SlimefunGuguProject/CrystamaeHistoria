@@ -8,6 +8,7 @@ import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefacti
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -72,7 +73,7 @@ public class StarFall extends Spell {
             2F
         );
         location.getWorld().spawnParticle(
-            Particle.REDSTONE,
+            VersionedParticle.DUST,
             location,
             10,
             dustOptions

@@ -8,6 +8,7 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -50,7 +51,7 @@ public class Gyroscopic extends Spell {
                 Location newLocation = entity.getLocation().clone();
                 newLocation.setYaw(entity.getLocation().getYaw() + 10F);
                 entity.teleport(newLocation);
-                ParticleUtils.displayParticleEffect(entity, Particle.SPELL, 1, 1);
+                ParticleUtils.displayParticleEffect(entity, VersionedParticleX.EFFECT, 1, 1);
             }
         }
     }

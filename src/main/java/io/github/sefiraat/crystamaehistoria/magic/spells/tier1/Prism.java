@@ -8,8 +8,9 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Material;
-import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;
 
@@ -24,14 +25,14 @@ public class Prism extends Spell {
             .makeEffectingSpell(true, true)
             .addPositiveEffect(PotionEffectType.ABSORPTION, 1, 30)
             .addPositiveEffect(PotionEffectType.CONDUIT_POWER, 1, 30)
-            .addPositiveEffect(PotionEffectType.DAMAGE_RESISTANCE, 1, 30)
+            .addPositiveEffect(VersionedPotionEffectType.RESISTANCE, 1, 30)
             .addPositiveEffect(PotionEffectType.DOLPHINS_GRACE, 1, 30)
-            .addPositiveEffect(PotionEffectType.FAST_DIGGING, 1, 30)
+            .addPositiveEffect(VersionedPotionEffectType.HASTE, 1, 30)
             .addPositiveEffect(PotionEffectType.HEALTH_BOOST, 1, 30)
             .addPositiveEffect(PotionEffectType.HERO_OF_THE_VILLAGE, 1, 30)
-            .addPositiveEffect(PotionEffectType.INCREASE_DAMAGE, 1, 30)
+            .addPositiveEffect(VersionedPotionEffectType.STRENGTH, 1, 30)
             .addPositiveEffect(PotionEffectType.INVISIBILITY, 1, 30)
-            .addPositiveEffect(PotionEffectType.JUMP, 1, 30)
+            .addPositiveEffect(VersionedPotionEffectType.JUMP_BOOST, 1, 30)
             .addPositiveEffect(PotionEffectType.LUCK, 1, 30)
             .addPositiveEffect(PotionEffectType.NIGHT_VISION, 1, 30)
             .addPositiveEffect(PotionEffectType.REGENERATION, 1, 30)
@@ -49,7 +50,7 @@ public class Prism extends Spell {
         }
         PersistentDataAPI.setBoolean(player, Keys.newKey("PRISM"), true);
         applyPositiveEffects(player, castInformation);
-        ParticleUtils.displayParticleEffect(player, Particle.SPELL, 2, 20);
+        ParticleUtils.displayParticleEffect(player, VersionedParticleX.EFFECT, 2, 20);
     }
 
     @Nonnull

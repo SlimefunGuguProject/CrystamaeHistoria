@@ -6,6 +6,7 @@ import io.github.sefiraat.crystamaehistoria.magic.spells.core.SpellCoreBuilder;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeSpell;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -23,10 +24,10 @@ public class TimeDilation extends Spell {
         SpellCoreBuilder spellCoreBuilder = new SpellCoreBuilder(40, true, 10, false, 25, true)
             .makeTickingSpell(this::cast, 10, true, 20, false)
             .makeEffectingSpell(true, false)
-            .addNegativeEffect(PotionEffectType.JUMP, -2, 2)
+            .addNegativeEffect(VersionedPotionEffectType.JUMP_BOOST, -2, 2)
             .addNegativeEffect(PotionEffectType.SLOW_FALLING, 2, 2)
-            .addNegativeEffect(PotionEffectType.SLOW, 2, 2)
-            .addNegativeEffect(PotionEffectType.SLOW_DIGGING, 2, 2);
+            .addNegativeEffect(VersionedPotionEffectType.SLOWNESS, 2, 2)
+            .addNegativeEffect(VersionedPotionEffectType.MINING_FATIGUE, 2, 2);
         setSpellCore(spellCoreBuilder.build());
     }
 

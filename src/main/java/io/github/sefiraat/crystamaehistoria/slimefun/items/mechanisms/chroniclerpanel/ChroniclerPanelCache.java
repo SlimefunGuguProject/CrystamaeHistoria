@@ -10,13 +10,13 @@ import io.github.sefiraat.crystamaehistoria.utils.ArmourStandUtils;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
 import io.github.sefiraat.crystamaehistoria.utils.StoryUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import lombok.Getter;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Particle;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -279,7 +279,7 @@ public class ChroniclerPanelCache extends AbstractCache {
         final Location location = blockMenu.getLocation();
         for (int i = 0; i < 2; i++) {
             final Location l = location.clone().add(ThreadLocalRandom.current().nextDouble(0, 1.1), 1, ThreadLocalRandom.current().nextDouble(0, 1.1));
-            location.getWorld().spawnParticle(Particle.ENCHANTMENT_TABLE, l, 0, 0.2, 0, -0.2, 0);
+            location.getWorld().spawnParticle(VersionedParticle.ENCHANT, l, 0, 0.2, 0, -0.2, 0);
         }
     }
 

@@ -9,12 +9,12 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.potion.PotionEffectType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -25,7 +25,7 @@ public class EarthNova extends Spell {
         SpellCoreBuilder spellCoreBuilder = new SpellCoreBuilder(20, true, 10, false, 10, false)
             .makeDamagingSpell(2, true, 1, false)
             .makeEffectingSpell(false, true)
-            .addNegativeEffect(PotionEffectType.SLOW, 20, 2)
+            .addNegativeEffect(VersionedPotionEffectType.SLOWNESS, 20, 2)
             .makeProjectileSpell(this::fireProjectiles, 2, false, 1, false)
             .makeProjectileVsEntitySpell(this::projectileHit);
         setSpellCore(spellCoreBuilder.build());

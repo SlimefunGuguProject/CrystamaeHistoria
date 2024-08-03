@@ -12,6 +12,7 @@ import io.github.sefiraat.crystamaehistoria.utils.Keys;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.sefiraat.crystamaehistoria.utils.StoryUtils;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import lombok.Getter;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
@@ -123,7 +124,7 @@ public class PrismaticGilderCache extends AbstractCache {
                 displayItem.registerRemoval(2000);
                 PlayerStatistics.unlockStoryGilded(player.getUniqueId(), definition);
             } else {
-                ParticleUtils.displayParticleEffect(location, Particle.CRIT_MAGIC, 1, 3);
+                ParticleUtils.displayParticleEffect(location, VersionedParticle.ENCHANTED_HIT, 1, 3);
             }
         }
     }

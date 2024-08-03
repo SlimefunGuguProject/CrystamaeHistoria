@@ -8,12 +8,12 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import lombok.Getter;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.FluidCollisionMode;
 import org.bukkit.Location;
-import org.bukkit.Particle;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.Ageable;
@@ -84,7 +84,7 @@ public class GreenHouseGlass extends TickingBlockNoGui {
             Ageable ageable = (Ageable) blockData;
             if (ageable.getAge() < ageable.getMaximumAge()) {
                 ageable.setAge(ageable.getAge() + 1);
-                ParticleUtils.displayParticleEffect(testBlock.getLocation().add(.5, .5, .5), Particle.SPELL_WITCH, 0.5, 2);
+                ParticleUtils.displayParticleEffect(testBlock.getLocation().add(.5, .5, .5), VersionedParticle.WITCH, 0.5, 2);
                 testBlock.setBlockData(ageable);
             }
         }

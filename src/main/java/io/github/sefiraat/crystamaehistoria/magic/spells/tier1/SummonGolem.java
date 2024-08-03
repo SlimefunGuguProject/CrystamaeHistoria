@@ -9,9 +9,9 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
 import io.github.sefiraat.crystamaehistoria.utils.mobgoals.GolemGoal;
+import net.guizhanss.crystamaehistoria.utils.compatibility.VersionedParticleX;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Particle;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Mob;
@@ -59,7 +59,7 @@ public class SummonGolem extends Spell {
         ) {
             mob.teleport(player.getLocation());
         }
-        ParticleUtils.displayParticleEffect(magicSummon.getMob(), Particle.SLIME, 1, 3);
+        ParticleUtils.displayParticleEffect(magicSummon.getMob(), VersionedParticleX.ITEM_SLIME, 1, 3);
     }
 
     @Nonnull

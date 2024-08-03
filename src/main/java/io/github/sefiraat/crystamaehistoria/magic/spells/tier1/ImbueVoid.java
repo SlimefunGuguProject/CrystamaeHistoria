@@ -7,10 +7,10 @@ import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefacti
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
 import io.github.sefiraat.crystamaehistoria.utils.mobgoals.BoringGoal;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
-import org.bukkit.potion.PotionEffectType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -21,8 +21,8 @@ public class ImbueVoid extends Spell {
     public ImbueVoid() {
         SpellCoreBuilder spellCoreBuilder = new SpellCoreBuilder(240, false, 3, false, 30, true)
             .makeTickingSpell(this::onTick, 5, false, 40, false)
-            .addPositiveEffect(PotionEffectType.SLOW, 99, 5)
-            .addPositiveEffect(PotionEffectType.SLOW_DIGGING, 99, 5);
+            .addPositiveEffect(VersionedPotionEffectType.SLOWNESS, 99, 5)
+            .addPositiveEffect(VersionedPotionEffectType.MINING_FATIGUE, 99, 5);
         setSpellCore(spellCoreBuilder.build());
 
     }
